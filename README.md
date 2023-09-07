@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Expect: 
+- Elementlerin beklenildigi sekilde calisip calismadigini kontrol eder.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Elementin beklenildigi sekilde davranip davranmadigini kontrol etmek icin fonksiyonlar sunar biz bu fonksiyonlara > Matchers (Eslestiriciler) diyoruz
 
-## Available Scripts
+- Test edilecek ifadeyi parametre olarak alır. Biz metodu çalıştırıp sonucunu expect’e vermiş olduk
 
-In the project directory, you can run:
+- Meatcehrlar element uzerindeki beklentimizi belirtir. Bu noktada matcherlara gitmemiz lazim nereden bulacagiz matcherlari -> jest-dom kutuphanesinden 
 
-### `npm start`
+- https://github.com/testing-library/jest-dom -> bu linkle ulasabiliriz 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- testi hangi kutuphane ile kullandigimiz onemli hata aldigimizda daha cabuk cozumlemek icin biri ->jest-dom kutuphanesi digeri ise -> react testing library bu da farkli ozelliklere sahip bu iki kutuphane ile testlerimizi yurutecegiz 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Test Yaparken Kullanabilecegimiz Yontemler 
 
-### `npm test`
+- Birtinci yolumuz TDD (Test-Driven Development): tdd de olay soyle calisir, once test yazilir ondan sonra uygulamanin ozelligi yazilir. Peki bize bunun artilari neler;
+- Testleri yazmak bir yuk gibi gelmiyor, yazilimin bir parcasi oldugunu anliyoruz
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Ikinci ozelligimiz ise BDD (Behaviour-Driven Development) -> once ozellik gelistirilir ondan sonra testi yazilir.
 
-### `npm run build`
+- Hangisinin tercihn edilecegi kisisel bir tercihtir. Ikisini de kullanabilirsiniz.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Notlar 
+- Eger ben bir elemani test edeceksem dogru algoritmayi kurmam gerek.
+- Test: Testin tanımlanmasını sağlar ve içine aldığı parametre ile birlikte açıklayıcı bir metin girilmesi beklenir. ‘2 + 2 = 4 eder’ ifadesi de ilgili testi nitelemektedir.
+- toBe: expect’ten dönen değer ile karşılaştırılacak değeri belirlenmesi içindir. Matcher olarak da ifade edilir. toEqual, toBeNull, toBeDefined gibi pek çok farklı matcher bulunur.
+- fireEvent --> biz kullanici etkilesimi olmasi icin kullanicinin butona tiklamasini, inputa yazi yazmasini, bir slideri suruklemesini isteyebiliriz bu taz etkilesimleri hayata gecirmenin yolu fireEvent iledir. Olay tetiklemek. 
